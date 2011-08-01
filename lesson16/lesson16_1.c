@@ -24,7 +24,7 @@ int main(void)
     strcpy(stu1.name, "lilin");
 
     printf("num  name\n");
-    printf("%d %s\n",ptr->num,stu1.name);
+    printf("%d   %s\n",ptr->num, stu1.name);
 
     return 0;
 }
