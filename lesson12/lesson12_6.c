@@ -22,7 +22,6 @@ int main(int argc, const char *argv[])
         
             if (num == (N-1))
             {
-//                doom[i] = 1;
                 printf("%4d (left)\n", i+1);
                 break; //若无此句则跳不出去
             }
@@ -32,14 +31,6 @@ int main(int argc, const char *argv[])
             {
                 out_counter = 0;
                 doom[i] = 1;
-              /*  if(num == (N-1))
-                {
-                    printf("%4d (left)\n", i+1);
-                }
-                else
-                {
-                    printf("%4d(out)\n",i+1);
-                } */
                 printf("%4d(out)\n",i+1);
                 num++;
             }
