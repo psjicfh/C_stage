@@ -89,12 +89,14 @@ STU *delete_node(STU *p) //添加一个结点
     {
         if (p == head) 
         {
-            head = p->next;    
+            head = p->next; 
+            free(p);
         }
 
         else 
         {
             temp->next = p->next;
+            free(p);
         }
 
     }
