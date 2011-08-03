@@ -4,6 +4,12 @@
 
 //链表(重点)
 
+static int crunode = 0; //结点个数 全局变量定义在段空间
+                 //局部变量定义在栈空间
+                 //static只能在本文件中用 即限制了其的可见性
+//extern int count; 声明外部变量
+//注：在main函数开始定义的变量不是真正的全局变量，只有一个文件时可以认为是全局变量
+
 struct student
 {
 	int number;
@@ -15,11 +21,12 @@ typedef	struct student STU;
 
 STU *create_link(int n)
 {
+//    static i = 0; 此局部变量内存不释放，只能初始化一次放在静态存储区
 	int i = 0;
-	STU *head = NULL;
+	STU *head1 = NULL;
 	STU *p = NULL;
 
-	head = p = malloc(sizeof(STU));
+	head1 = p = malloc(sizeof(STU));
 	if(p == NULL)
 	{
 		perror("create");
@@ -40,10 +47,9 @@ STU *create_link(int n)
 		p->next->number = i+1;
 		strcpy(p->next->name, "student");
 		p->next->next = NULL;
-		p = p->next;
+		p = p->next; // 使p指向下一个结点
 	}
-
-	return head;
+	return head1;
 }
 
 void print_link(STU *p)
@@ -52,6 +58,8 @@ void print_link(STU *p)
 	{
 		printf("%-5d  %s\n", p->number,p->name);
 		p = p->next;
+
+        crunode++;//结点个数
 	}
 }
 int main(int argc, const char *argv[])
@@ -60,5 +68,6 @@ int main(int argc, const char *argv[])
 
 	head = create_link(10);
 	print_link(head);
+    printf("crunode = %d\n",crunode);
 	return 0;
 }//const 禁止修改内容
