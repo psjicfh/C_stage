@@ -1,3 +1,5 @@
+/* 约瑟夫环*/
+
 #include <stdio.h>
 #define uchar unsigned char
 #define N  11
@@ -20,7 +22,7 @@ int main(int argc, const char *argv[])
         
             if (num == (N-1))
             {
-                doom[i] = 1;
+//                doom[i] = 1;
                 printf("%4d (left)\n", i+1);
                 break; //若无此句则跳不出去
             }
