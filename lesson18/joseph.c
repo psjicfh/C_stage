@@ -40,13 +40,14 @@ V_NODE *init_circle(int n)
 	}
 	p->next = head;
 
-	return p;
+	return p;//此时的p指向最后一个
 
 }
 
 void j_game(V_NODE *p_f)
 {
 	V_NODE *p = p_f->next;
+    //此处的p指向第一个p_f指向最后一个
 	int interval = 3;
 	int out_counter = 0;
 
@@ -59,13 +60,13 @@ void j_game(V_NODE *p_f)
 			printf("%6d(out)\n", p->number);
 			p_f->next = p->next;
 			free(p);
-			p = p_f->next;
+			p = p_f->next; //p向后移动 p_f没动
 		}
 		else
 		{
 			printf("%6d", p->number);
 			p = p->next;
-			p_f = p_f->next;
+			p_f = p_f->next;//p和p_f都向后移动
 		}
 	}
 	printf("%6d left\n", p->number);
