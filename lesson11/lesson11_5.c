@@ -1,3 +1,4 @@
+//输入一个十进制数转化成2进制数
 #include <stdio.h>
 int main(void)
 {
