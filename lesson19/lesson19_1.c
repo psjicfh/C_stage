@@ -15,9 +15,9 @@ int main(int argc, const char *argv[])
         exit(0);
     }
     
-    fgets(r_str, 1023, stdin); 
-    fputs(r_str,stdout);
-//    fclose(fp);
+//    fgets(r_str, 1023, stdin); 
+//    fputs(r_str,stdout);
+    fclose(fp);
 
     return 0;
 }

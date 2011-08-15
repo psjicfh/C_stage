@@ -16,7 +16,7 @@ int main(int argc, const char *argv[])
         exit(0);
     }
     
-    fprintf(fp,"%s\n", str);
+//    fprintf(fp,"%s\n", str);
     fclose(fp);
 
     return 0;

@@ -23,10 +23,10 @@ STU *create_link(int n)
 {
 //    static i = 0; 此局部变量内存不释放，只能初始化一次放在静态存储区
 	int i = 0;
-	STU *head1 = NULL;
+	STU *head = NULL;
 	STU *p = NULL;
 
-	head1 = p = malloc(sizeof(STU));
+	head = p = malloc(sizeof(STU));
 	if(p == NULL)
 	{
 		perror("create");
@@ -49,7 +49,7 @@ STU *create_link(int n)
 		p->next->next = NULL;
 		p = p->next; // 使p指向下一个结点
 	}
-	return head1;
+	return head;
 }
 
 void print_link(STU *p)

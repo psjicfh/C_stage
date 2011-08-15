@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+//把文件中的内容读出来赋值到数组中然后打印数组
 
 int main(int argc, const char *argv[])
 {

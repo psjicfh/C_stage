@@ -68,7 +68,7 @@ void print_link(STU *p)
 	}
 }
 
-STU *delete_node(STU *p) //添加一个结点
+STU *delete_node(STU *p) //删除一个结点
 {
     STU *head = p;
     STU *temp = NULL;

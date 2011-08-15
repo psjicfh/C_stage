@@ -4,7 +4,7 @@
 int main(int argc, const char *argv[])
 {
     FILE *fp = NULL;
-    char str[1024] = "I like C program!";
+    char str[1024] = "I like C\n program!";
     char r_str[1024] = {0};
 
     fp = fopen("2.txt", "w+");
