@@ -1,0 +1,27 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+BORD	mouse_op.c	7;"	d	file:
+C_H	mouse_op.c	12;"	d	file:
+C_W	mouse_op.c	11;"	d	file:
+T___	mouse_op.c	9;"	d	file:
+X___	mouse_op.c	8;"	d	file:
+bg	mouse_op.c	/^u32_t bg[C_H*C_W] = {0}; $/;"	v
+cursor_pixel	mouse_op.c	/^static u32_t cursor_pixel[C_W*C_H]=$/;"	v	file:
+draw_cursor	mouse_op.c	/^int draw_cursor(int x, int y) \/\/画鼠标$/;"	f
+fb_circle	basic_figure.c	/^int fb_circle(int x0, int y0, int r, u32_t color)$/;"	f
+fb_line	basic_figure.c	/^int fb_line(int x1, int y1, int x2, int y2, u32_t color) \/\/Bresenham画线函数$/;"	f
+fb_one_pixel	basic_figure.c	/^int fb_one_pixel(int x, int y, u32_t color)$/;"	f
+fb_v	init_op.c	/^fbscr_t fb_v;$/;"	v
+get_mouse_info	mouse_op.c	/^int get_mouse_info(int fd, mouse_event *p)$/;"	f
+init_data	init_op.c	/^int init_data(void)$/;"	f
+main	gobang.c	/^int main(int argc, const char *argv[])$/;"	f
+mouse_doing	mouse_op.c	/^int mouse_doing(void)$/;"	f
+mx	init_op.c	/^int mx;$/;"	v
+my	init_op.c	/^int my;$/;"	v
+restore_bg	mouse_op.c	/^int restore_bg(int x, int y) \/\/恢复背景$/;"	f
+save_bg	mouse_op.c	/^int save_bg(int x, int y) \/\/保存背景$/;"	f
+swap	basic_figure.c	/^void swap(int *a, int *b)$/;"	f
