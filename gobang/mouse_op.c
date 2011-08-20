@@ -57,7 +57,7 @@ int draw_cursor(int x, int y)
 }
 
 
-int save_bg(int x, int y)
+int save_bg(int x, int y) //保存背景
 {
 	int i = 0;
 	int j = 0;
@@ -73,7 +73,7 @@ int save_bg(int x, int y)
 }
 
 
-int restore_bg(int x, int y)
+int restore_bg(int x, int y) //恢复背景
 {
 	int i = 0;
 	int j = 0;
@@ -91,15 +91,15 @@ int restore_bg(int x, int y)
 
 int get_mouse_info(int fd, mouse_event *p) //获取鼠标值
 {
-	char buf[8];
+	char buf[3];
 	int n = 0;
 	n = read(fd, buf, 3); //鼠标动则>0
 	if(n > 0)
 	{
 		p->dx = buf[1];
 		p->dy = -buf[2];
-		p->button = (buf[0] & 0x07);
-	}
+		p->button = (buf[0] & 0x07);//左击鼠标1 右击鼠标2 鼠标中间4
+	}								//即：只用到buf[0]的低三位
 	
 	return n;
 }
@@ -133,7 +133,7 @@ int mouse_doing(void)
 	}
 
 	mx = fb_v.w/2;
-	my = fb_v.h/2;
+	my = fb_v.h/2; //确定光标位置
 
 	draw_cursor(mx, my); //画鼠标
 
@@ -193,13 +193,3 @@ int mouse_doing(void)
 	close(fd);
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-

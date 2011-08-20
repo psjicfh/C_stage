@@ -26,8 +26,8 @@ typedef struct
 typedef struct
 {
 	int dx;
-	int dy;
-	char button;
+	int dy; //鼠标移动
+	char button;//鼠标值
 } mouse_event;
 
 int init_data( void );

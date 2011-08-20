@@ -13,11 +13,11 @@
 fbscr_t fb_v;
 
 int mx;
-int my;
+int my; //光标位置
 
-char chess_board[X_NUM*Y_NUM];
-char player;
-u32_t current_color;
+char chess_board[X_NUM*Y_NUM]; //棋盘大小数组
+char player; //玩儿家 
+u32_t current_color; //颜色
 
 int init_data(void)
 {	
@@ -42,14 +42,14 @@ int init_data(void)
 	fb_v.bpp = fb_var.bits_per_pixel;
 
 	fb_v.memo = mmap(NULL, fb_v.w*fb_v.h*fb_v.bpp/8, PROT_READ|PROT_WRITE, MAP_SHARED, fd, 0);
-	
-	if(fb_v.memo == MAP_FAILED)
+	//详见笔记	
+	if(fb_v.memo == MAP_FAILED) //检查内存是否映射成功
 	{
 		perror("map");
 		exit(0);
 	}
-	memset(fb_v.memo, 0, fb_v.w*fb_v.h*fb_v.bpp/8);
-	memset(chess_board, 0, X_NUM*Y_NUM);
+	memset(fb_v.memo, 0, fb_v.w*fb_v.h*fb_v.bpp/8); //清屏
+	memset(chess_board, 0, X_NUM*Y_NUM); //清棋盘
 
 	current_color = BLACK;
 	player = 1;

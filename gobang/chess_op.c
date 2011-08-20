@@ -15,7 +15,7 @@ int check(int x, int y)
 
 	for(i=1; i<5; i++)
 	{
-		if(chess_board[x+i+y*X_NUM] == who)
+		if(chess_board[x+i+y*X_NUM] == who) //水平方向检测
 		{
 			counter++;		
 		}
@@ -29,7 +29,7 @@ int check(int x, int y)
 		return who;
 	}
 	counter = 1;
-	for(i=1, j= -1; i<5; i++, j--)
+	for(i=1, j= -1; i<5; i++, j--) //45度方向检查
 	{
 		if(chess_board[x+i+(y+j)*X_NUM] == who)
 		{
@@ -74,9 +74,9 @@ int chess_doing(void)
 	int rx = (mx-ST_X)%SPACE;
 	int ry = (my-ST_Y)%SPACE;
 	int cx = mx - rx;
-	int cy = my - ry;
+	int cy = my - ry;//找棋盘上的交点坐标
 
-	if((mx < ST_X) || (mx > (ST_X+(X_NUM-1)*SPACE)))
+	if((mx < ST_X) || (mx > (ST_X+(X_NUM-1)*SPACE)))//保证光标不在棋盘外
 	{
 		return 0;
 	}
@@ -84,7 +84,7 @@ int chess_doing(void)
 	{
 		return 0;
 	}
-	if(rx > (SPACE/2))
+	if(rx > (SPACE/2)) //选择交叉点
 	{
 		cx += SPACE;	
 	}
@@ -93,7 +93,7 @@ int chess_doing(void)
 		cy += SPACE;
 	}
 	char winner = 0;
-	fb_circle(cx, cy, 13, current_color);
+	fb_circle(cx, cy, 13, current_color); //画棋子
 	winner = chess_put((cx-ST_X)/SPACE, (cy-ST_Y)/SPACE); //找坐标
 	if(winner > 0 )
 	{
