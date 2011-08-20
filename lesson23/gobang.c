@@ -26,6 +26,7 @@ int main(int argc, const char *argv[])
 	sleep(1);
 	restore_bg(512,384);
 	draw_cursor(512,300);*/
+
 	mouse_doing();
 
     return 0;

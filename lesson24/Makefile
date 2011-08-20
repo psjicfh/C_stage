@@ -1,6 +1,9 @@
 #this is for chess
 
-src=gobang.c init_op.c basic_figure.c mouse_op.c chess_op.c
+
+
+
+src=gobang.c init_op.c basic_shapes.c print_board.c mouse_op.c chess_op.c
 para=-o main -Wall
 main:$(src)
 	gcc $(src) $(para)
